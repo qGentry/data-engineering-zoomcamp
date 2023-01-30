@@ -4,6 +4,7 @@ locals {
 
 variable "project" {
   description = "Your GCP Project ID"
+  default = "de-course-zoomcamp"
 }
 
 variable "region" {
