@@ -22,8 +22,22 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     print(df.head(2))
     print(f"Dtypes of df: {df.dtypes}")
     print(f"Length of df: {len(df)}")
-    df["tpep_pickup_datetime"] = pd.to_datetime(df["tpep_pickup_datetime"])
-    df["tpep_dropoff_datetime"] = pd.to_datetime(df["tpep_dropoff_datetime"])
+    try:
+        df["lpep_pickup_datetime"] = pd.to_datetime(df["lpep_pickup_datetime"])
+    except:
+        pass
+    try:
+        df["lpep_dropoff_datetime"] = pd.to_datetime(df["lpep_dropoff_datetime"])
+    except:
+        pass
+    try:
+        df["tpep_pickup_datetime"] = pd.to_datetime(df["tpep_pickup_datetime"])
+    except:
+        pass
+    try:
+        df["tpep_dropoff_datetime"] = pd.to_datetime(df["tpep_dropoff_datetime"])
+    except:
+        pass
     return df
 
 
